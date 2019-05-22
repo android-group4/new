@@ -28,7 +28,7 @@ public class LoginActivity extends AppCompatActivity {
     private MyDatabaseHelper dbHelper;
     private Button check_user,register;
     private EditText username, userpassword;
-    private ImageView login_head;
+    private ImageView login_head,imageView;
 
     //加载User实例
     //User user = User.getInstance();
@@ -40,7 +40,7 @@ public class LoginActivity extends AppCompatActivity {
 
         register = (Button) findViewById(R.id.btn_register);
         dbHelper = new MyDatabaseHelper(this, "UserDB.db", null, 1);
-
+        imageView =(ImageView) findViewById(R.id.imageView);
         check_user = (Button) findViewById(R.id.check_user);
 
         username = (EditText) findViewById(R.id.login_username);
@@ -64,6 +64,16 @@ public class LoginActivity extends AppCompatActivity {
         } catch (Exception e) {
             e.printStackTrace();
         }
+
+        imageView.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(LoginActivity.this, LoginOrRegisterActivity.class);
+                startActivity(intent);
+                finish();
+            }
+        });
+
 
         check_user.setOnClickListener(new View.OnClickListener() {
             @Override

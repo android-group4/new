@@ -33,8 +33,7 @@ import java.io.FileOutputStream;
 public class RegisterActivity extends AppCompatActivity {
 
     private MyDatabaseHelper dbHelper;
-
-    private TextView save_user;
+    private TextView save_user,login;
     private ImageView shangchuan_head;
     private ImageView back;
     private EditText username, userpassword, repassword;
@@ -56,11 +55,20 @@ public class RegisterActivity extends AppCompatActivity {
         userpassword =(EditText) findViewById(R.id.register_password);
         repassword =(EditText) findViewById(R.id.register_repassword);
         checkBox =(CheckBox) findViewById(R.id.checkbox_tiaokuan);
-
+        login = (TextView) findViewById(R.id.register_login);
         back.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 Intent intent = new Intent(RegisterActivity.this, LoginOrRegisterActivity.class);
+                startActivity(intent);
+                finish();
+            }
+        });
+
+        login.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(RegisterActivity.this, LoginActivity.class);
                 startActivity(intent);
                 finish();
             }
