@@ -8,14 +8,17 @@
         android:layout_height="40dp"
         android:background="#CD3333"
         android:orientation="horizontal">
+
         <ImageView
+            android:id="@+id/back"
             android:layout_width="0dp"
             android:layout_height="match_parent"
-            android:layout_weight="1"
             android:layout_marginTop="8dp"
-            android:layout_marginBottom="8dp"
             android:layout_marginRight="10dp"
-            android:src="@drawable/left"/>
+            android:layout_marginBottom="8dp"
+            android:layout_weight="1"
+            android:src="@drawable/left" />
+
         <TextView
             android:layout_width="0dp"
             android:layout_weight="1"
@@ -97,5 +100,6 @@
         android:layout_marginTop="40dp"
 
         android:text="提交" />
+
 
 </LinearLayout> 
