@@ -101,5 +101,16 @@
 
         android:text="提交" />
 
+    <TextView
+        android:id="@+id/btn_login"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_marginLeft="100dp"
+        android:layout_marginRight="100dp"
+        android:layout_marginTop="40dp"
+        android:gravity="center"
+        android:text="已有账号，点击登录" />
+
 
 </LinearLayout> 
