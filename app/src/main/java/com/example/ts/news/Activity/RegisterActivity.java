@@ -36,6 +36,7 @@ public class RegisterActivity extends AppCompatActivity {
 
     private TextView save_user;
     private ImageView shangchuan_head;
+    private ImageView back;
     private EditText username, userpassword, repassword;
     private CheckBox checkBox;
 
@@ -50,11 +51,20 @@ public class RegisterActivity extends AppCompatActivity {
 
         save_user =(TextView) findViewById(R.id.save_user);
         shangchuan_head =(ImageView) findViewById(R.id.shangchuan_head);
-
+        back =(ImageView) findViewById(R.id.back);
         username =(EditText) findViewById(R.id.register_username);
         userpassword =(EditText) findViewById(R.id.register_password);
         repassword =(EditText) findViewById(R.id.register_repassword);
         checkBox =(CheckBox) findViewById(R.id.checkbox_tiaokuan);
+
+        back.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(RegisterActivity.this, LoginOrRegisterActivity.class);
+                startActivity(intent);
+                finish();
+            }
+        });
 
         shangchuan_head.setOnClickListener(new View.OnClickListener() {
             @Override

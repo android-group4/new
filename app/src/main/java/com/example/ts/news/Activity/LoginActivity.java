@@ -26,7 +26,7 @@ import java.io.FileInputStream;
 
 public class LoginActivity extends AppCompatActivity {
     private MyDatabaseHelper dbHelper;
-    private Button check_user;
+    private Button check_user,register;
     private EditText username, userpassword;
     private ImageView login_head;
 
@@ -38,7 +38,7 @@ public class LoginActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login);
 
-
+        register = (Button) findViewById(R.id.btn_register);
         dbHelper = new MyDatabaseHelper(this, "UserDB.db", null, 1);
 
         check_user = (Button) findViewById(R.id.check_user);
@@ -94,6 +94,14 @@ public class LoginActivity extends AppCompatActivity {
                 }
                 cursor.close();
                 db.close();
+            }
+        });
+        register.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(LoginActivity.this, RegisterActivity.class);
+                startActivity(intent);
+                finish();
             }
         });
         ApplicationUtil.getInstance().addActivity(this);
